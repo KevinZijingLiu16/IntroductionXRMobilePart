@@ -8,7 +8,8 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
-       Vector2 moveDirection = moveAction.action.ReadValue<Vector2>();
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        Vector2 moveDirection = moveAction.action.ReadValue<Vector2>();
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
         //transform.Translate(Vector3) is used to move the object in the direction and the magnitude of the vector.
